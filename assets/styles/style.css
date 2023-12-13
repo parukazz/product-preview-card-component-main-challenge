@@ -1,0 +1,255 @@
+/* Import fonts */
+
+/* -- Fraunces -- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100;0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,100;1,9..144,200;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700;1,9..144,800;1,9..144,900&display=swap');
+
+/* -- Montserrat -- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* RESET CSS */
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ============================= */
+
+/* == VARIABLES == */
+:root {
+
+  /* -- Colors -- */
+
+  /* primary */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  /* neutral */
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* -- Typography -- */
+
+  /* body copy */
+  --fs-body: 14px;
+
+  /* font weight */
+  --fw-500: 500;
+  --fw-700: 700;
+
+}
+
+/* ============================= */
+
+body { background: var(--cream); }
+
+h1,h2,h3,h4,h5,h6 { font-family: 'Fraunces', serif; }
+
+p { font-family: 'Montserrat', sans-serif; }
+
+/* ============================= */
+
+.container {
+  width: 100%;
+  padding-block: 30px;
+  padding-inline: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.product-image img.img-mobile {
+  width: 100%;
+}
+
+.product-image img.img-desktop {
+  display: none;
+}
+
+.product-info {
+  background: var(--white);
+  padding-block: 30px;
+  padding-inline: 25px;
+}
+
+.category {
+  font-size: var(--fs-body);
+  text-transform: uppercase;
+  color: var(--dark-grayish-blue);
+  letter-spacing: 5px;
+  font-weight: var(--fw-500);
+  margin-bottom: 15px;
+}
+
+.product-name {
+  font-size: 28px;
+  font-weight: var(--fw-700);
+  line-height: 30px;
+  margin-bottom: 15px;
+  color: var(--very-dark-blue);
+}
+
+.product-desc {
+  font-size: var(--fs-body);
+  color: var(--dark-grayish-blue);
+  line-height: 24px;
+  font-weight: var(--fw-500);
+  margin-bottom: 30px;
+}
+
+
+.price-product {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price-sale {
+  color: var(--dark-cyan);
+  font-size: 36px;
+  font-weight: var(--fw-700);
+}
+
+.sub-price {
+  color: var(--dark-grayish-blue);
+  font-weight: var(--fw-500);
+  font-size: var(--fs-body);
+  text-decoration: line-through;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  background: var(--dark-cyan);
+  padding: 18px 20px;
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: var(--fw-700);
+  cursor: pointer;
+}
+
+.btn svg {
+  margin-right: 5px;
+}
+
+/* ============================= */
+
+@media (min-width: 768px) {
+
+  .container {
+    width: 900px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper {
+    flex-direction: row;
+    width: 700px;
+  }
+
+  .product-image {
+    width: 50%;
+  }
+
+  .product-info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 40px;
+  }
+
+  .product-image img.img-mobile {
+    display: none;
+  }
+
+  .product-image img.img-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  .category {
+    margin-bottom: 20px;
+  }
+
+  .product-name {
+    font-size: 36px;
+    line-height: 38px;
+    margin-bottom: 25px;
+  }
+
+  .price-product {
+    margin-bottom: 40px;
+  }
+
+  .attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    padding-block: 20px;
+  }
+
+}
+
+/* ===== Footer ===== */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
